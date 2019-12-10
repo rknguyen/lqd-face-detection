@@ -13,7 +13,8 @@ def do_work(image):
         retval, buffer = cv2.imencode('.jpg', image)
         jpg_as_text = base64.b64encode(buffer)
         data = {"image": jpg_as_text}
-        r = requests.post(url="http://127.0.0.1:1210/recognize", data=data)
+        r = requests.post(
+            url="http://68.183.226.196:1210/recognize", data=data)
         print(r.text)
     except:
         pass

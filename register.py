@@ -40,7 +40,8 @@ def face_detection():
             retval, buffer = cv2.imencode('.jpg', aligned_image)
             jpg_as_text = base64.b64encode(buffer)
             data = {"image": jpg_as_text, "user_id": username}
-            r = requests.post(url="http://127.0.0.1:1210/register", data=data)
+            r = requests.post(
+                url="http://68.183.226.196:1210/register", data=data)
             if (r == "OK"):
                 print("OK")
             break
